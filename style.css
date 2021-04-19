@@ -1,16 +1,33 @@
+html {
+  height: 100%;
+}
 body {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  height: 100%;
   width: 100%;
-  height: 100vh;
   margin: 0;
-  font-family: 'Droid Sans', arial, serif
+  font-family: 'Droid Sans', arial, serif;
+  color: #222222;
 }
 
-h2, h3, h4 {
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+h3, h4 {
   margin-top: 0;
 }
 
 h1 {
   margin: 0;
+}
+h2 {
+  margin-top: 10px;
+}
+h3 {
+  margin-bottom: 20px;
 }
 
 p {
@@ -23,101 +40,116 @@ p {
 
 .app-wrap {
   display: flex;
-  flex-direction: column;
-  /* background: rgb(214, 214, 214); */
-  min-height: 100%;
-  align-items: center;
-  justify-content: center;
+  flex-grow: 1;
+  padding: 60px 0;
+  overflow: auto;
 }
 
-.app-wrap .card {
-  /* background: rgb(133, 133, 133); */
+@media only screen and (max-width: 991px) {
+  .app-wrap {
+    padding: 15px;
+  }
+}
+
+.app-wrap .card-wrap {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: auto;
+}
+.app-wrap .card-wrap .card {
+  background: #eeeeee;
   width: 50%;
+  transition: width .3s ease-in-out;
   padding: 30px;
 }
 
 @media only screen and (max-width: 991px) {
-  .app-wrap .card {
-    width: 80%;
+  .app-wrap .card-wrap .card {
+    width: 100%;
+    padding: 15px;
   }
 }
 
-.app-wrap .card .links-wrap {
+.app-wrap .card-wrap .card .links-wrap {
   display: flex;
   padding: 10px 0;
 }
 
-.app-wrap .card .links-wrap .link {
-  color: #000;
+.app-wrap .card-wrap .card .links-wrap .link {
+  color: #222222;
   margin-right: 10px;
 }
 
-.app-wrap .card .links-wrap .link i {
+.app-wrap .card-wrap .card .links-wrap .link i {
   font-size: 19px;
 }
 
-.app-wrap .card .content-wrap {
+.app-wrap .card-wrap .card .content-wrap {
   display: flex;
+  margin: 0 -7px;
 }
 
 @media only screen and (max-width: 991px) {
-  .app-wrap .card .content-wrap {
+  .app-wrap .card-wrap .card .content-wrap {
     flex-direction: column;
   }
 }
 
-.app-wrap .card .content-wrap >* {
+.app-wrap .card-wrap .card .content-wrap >* {
   width: 100%;
+  margin: 0 7px;
 }
 
 @media only screen and (max-width: 991px) {
-  .app-wrap .card .content-wrap :first-child {
+  .app-wrap .card-wrap .card .content-wrap :first-child {
     margin-bottom: 30px;
   }
 }
 
-.app-wrap .card .content-wrap .timeline {
+.app-wrap .card-wrap .card .content-wrap .timeline {
   display: flex;
   flex-direction: column;
 }
-.app-wrap .card .content-wrap .timeline .time-item {
+.app-wrap .card-wrap .card .content-wrap .timeline .time-item {
   position: relative;
-  border-left: 1px solid #000;
+  border-left: 1px solid #222222;
 }
-.app-wrap .card .content-wrap .timeline .time-item h4 {
+.app-wrap .card-wrap .card .content-wrap .timeline .time-item h4 {
   margin: -5px 0 10px 0;
 }
-.app-wrap .card .content-wrap .timeline .time-item h5 {
+.app-wrap .card-wrap .card .content-wrap .timeline .time-item h5 {
   margin: 0 0 20px;
 }
-.app-wrap .card .content-wrap .timeline .time-item p {
+.app-wrap .card-wrap .card .content-wrap .timeline .time-item p {
   margin-bottom: 30px;
 }
-.app-wrap .card .content-wrap .timeline .time-item:last-child p {
+.app-wrap .card-wrap .card .content-wrap .timeline .time-item:last-child p {
   margin-bottom: 0;
 }
-.app-wrap .card .content-wrap .timeline .time-item >* {
+.app-wrap .card-wrap .card .content-wrap .timeline .time-item >* {
   padding-left: 15px;
 }
-.app-wrap .card .content-wrap .timeline .time-item::before {
+.app-wrap .card-wrap .card .content-wrap .timeline .time-item::before {
   content: '';
   width: 10px;
   height: 10px;
-  background-color: #000;
+  background-color: #222222;
   position: absolute;
   border-radius: 50%;
   margin-left: -5px;
 }
 
-.app-wrap .card .content-wrap .text-block .skills-wrap {
+.app-wrap .card-wrap .card .content-wrap .text-block .skills-wrap {
   display: flex;
   flex-wrap: wrap;
+  margin-top: -7px;
 }
-.app-wrap .card .content-wrap .text-block .skills-wrap .skill {
+.app-wrap .card-wrap .card .content-wrap .text-block .skills-wrap .skill {
   white-space: nowrap;
-  background-color: #000;
+  background-color: #222222;
   color: #fff;
   padding: 3px 5px;
   margin: 3px;
-  border-radius: 3px;
+  border-radius: 0;
 }
