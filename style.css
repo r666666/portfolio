@@ -41,7 +41,6 @@ p {
 .app-wrap {
   display: flex;
   flex-grow: 1;
-  padding: 60px 0;
   overflow: auto;
 }
 
